@@ -1,0 +1,24 @@
+{
+    "id": "java-app",
+    "cpus": 1,
+    "cmd": "/usr/local/openjdk-8/bin/java -jar /usr/share/myservice/myservice.jar",
+    "mem": 1024,
+    "disk": 0,
+    "instances": 1,
+    "env":   {
+      "JAVA_OPTS": "-Xms256m -Xmx1024m -XX:MaxMetaspaceSize=256m -XX:MaxDirectMemorySize=128m -Dnetworkaddress.cache.ttl=60 -Dnetworkaddress.cache.negative.ttl=0",
+      "SPRING_PROFILES_ACTIVE": "prod",
+      "SERVER_PORT": "31196"
+    },
+    "container": {
+      "docker": {
+        "image": "nenodias/container:0.0.1-SNAPSHOT"
+      },
+      "type": "DOCKER"
+    },
+    "networks": [
+      {
+        "mode": "host"
+      }
+    ]
+  }

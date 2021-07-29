@@ -1,4 +1,4 @@
-FROM openjdk:8-jre
+FROM openjdk:8-jdk
 EXPOSE 8080
 ARG JAVA_OPTS
 ENV JAVA_OPTS=$JAVA_OPTS
